@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+    <title>打飞机小游戏</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="game-root">
+        <canvas id="game-canvas"></canvas>
+
+        <div id="hud">
+            <div class="hud-left">
+                <span id="score-label">得分：</span><span id="score">0</span>
+                <span id="weapon" title="当前武器">｜武器：普通</span>
+            </div>
+            <div class="hud-right">
+                <span id="lives-label">生命：</span><span id="lives">3</span>
+                <span id="score-top" class="score-badge">0</span>
+                <button id="pause-btn" aria-label="暂停(键盘 P)">暂停</button>
+                <button id="mute-btn" aria-label="静音/开启音效">🔊</button>
+            </div>
+        </div>
+
+        <div id="overlay" class="overlay show">
+            <div class="panel">
+                <h1>打飞机</h1>
+                <p>操作：</p>
+                <ul>
+                    <li>键盘 A/D 或 ←/→ 移动</li>
+                    <li>空格键射击（移动端自动连发）</li>
+                    <li>P 键暂停/继续</li>
+                </ul>
+                <button id="start-btn">开始游戏</button>
+            </div>
+        </div>
+
+        <div id="gameover" class="overlay">
+            <div class="panel">
+                <h2>游戏结束</h2>
+                <p>本局得分：<span id="final-score">0</span></p>
+                <button id="restart-btn">再来一局</button>
+            </div>
+        </div>
+
+        <div id="touch-hint">拖动屏幕移动，自动射击</div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

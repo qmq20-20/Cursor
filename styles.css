@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: radial-gradient(1200px 800px at 50% 20%, #0b1530, #060913 70%, #03060d);
+    color: #e7ecff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+}
+
+#game-root {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#game-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#hud {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    pointer-events: none;
+}
+
+#hud .hud-left,
+#hud .hud-right {
+    pointer-events: auto;
+}
+
+#weapon {
+    margin-left: 10px;
+    opacity: .85;
+}
+
+.score-badge {
+    display: inline-block;
+    min-width: 40px;
+    text-align: center;
+    margin-left: 10px;
+    padding: 4px 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, .2);
+    background: rgba(255, 255, 255, .08);
+    backdrop-filter: blur(6px);
+}
+
+#hud #pause-btn,
+#hud #mute-btn {
+    margin-left: 8px;
+    padding: 6px 10px;
+    border: 1px solid rgba(255, 255, 255, .2);
+    background: rgba(255, 255, 255, .06);
+    color: #e7ecff;
+    border-radius: 8px;
+    backdrop-filter: blur(6px);
+    cursor: pointer;
+}
+
+#hud #pause-btn:hover,
+#hud #mute-btn:hover {
+    background: rgba(255, 255, 255, .12);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .35);
+    backdrop-filter: blur(2px);
+}
+
+.overlay.show {
+    display: flex;
+}
+
+.panel {
+    width: min(90%, 420px);
+    background: linear-gradient(180deg, rgba(20, 28, 56, .9), rgba(10, 16, 36, .9));
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 16px;
+    padding: 20px 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
+}
+
+.panel h1,
+.panel h2 {
+    margin: 0 0 10px;
+}
+
+.panel button {
+    margin-top: 12px;
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 16px;
+    border-radius: 10px;
+    background: #2a63ff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.panel button:hover {
+    background: #1f4ddb;
+}
+
+#touch-hint {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 10px;
+    background: rgba(0, 0, 0, .35);
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 999px;
+    font-size: 12px;
+    display: none;
+}
+
+@media (pointer: coarse) {
+    #touch-hint {
+        display: block;
+    }
+}
